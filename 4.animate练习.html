@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            $('li').mouseenter(function () {
+                $(this).stop().animate({
+                    width: 200
+                }, function () {
+                    $(this).find('i').stop().fadeIn()
+                }).css('border', '3px solid #b19c88').siblings().stop().animate({
+                    width: 85
+                }).css('border', '')
+            })
+            $('li').mouseleave(function () {
+                $(this).find('i').css('display', 'none')
+            })
+            $('.body').mouseleave(function () {
+                $(this).find('li').animate({
+                    width: 85
+                })
+            })
+        })
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .body {
+            overflow: hidden;
+            padding: 15px;
+            height: 145px;
+            background-color: #1a4068;
+        }
+
+        h3 {
+            font-size: 14px;
+            color: rgb(219, 217, 217);
+            font-weight: 600;
+        }
+
+        li {
+            position: relative;
+            overflow: hidden;
+            margin-top: 15px;
+            margin-right: 5px;
+            float: left;
+            width: 85px;
+            height: 85px;
+            background-color: pink;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px 0;
+        }
+
+        img {
+            width: 85px;
+            height: 85px;
+        }
+
+        i {
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 105px;
+            font-style: normal;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <h3>必须要有一个标题</h3>
+        <ul>
+            <li><img src="./img/1.webp" alt=""><i>潜藏的一个秘密</i></li>
+            <li><img src="./img/2.webp" alt=""><i>你觉得，会是什么呢？</i></li>
+            <li><img src="./img/3.webp" alt=""><i>也许是一个梦</i></li>
+            <li><img src="./img/4.webp" alt=""><i>也许是一句话</i></li>
+            <li><img src="./img/5.webp" alt=""><i>只是那些失去的</i></li>
+            <li><img src="./img/6.webp" alt=""><i>已没有机会重试。</i></li>
+        </ul>
+    </div>
+</body>
+
+</html>
